@@ -1,0 +1,43 @@
+{
+  "name": "@maray-ai/threejs-template",
+  "private": false,
+  "version": "0.0.0",
+  "description": "Three.js starter template.",
+  "homepage": "https://github.com/maray29/threejs-template#readme",
+  "license": "MIT",
+  "keywords": [],
+  "author": "maray29 <ayk@maray.ai>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maray29/threejs-template.git"
+  },
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "src/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "release": "changeset publish",
+    "lint": "eslint --ignore-path .gitignore ./src && prettier --check ./src",
+    "lint:fix": "eslint --ignore-path .gitignore ./src --fix",
+    "format": "prettier --write ./src",
+    "update": "pnpm update -i -L -r"
+  },
+  "devDependencies": {
+    "vite": "^4.0.4",
+    "vite-plugin-glsl": "^1.1.1"
+  },
+  "dependencies": {
+    "@changesets/cli": "^2.26.1",
+    "cannon-es": "^0.20.0",
+    "cannon-es-debugger": "^1.0.0",
+    "gsap": "^3.11.5",
+    "stats.js": "^0.17.0",
+    "three": "^0.148.0",
+    "tweakpane": "^3.1.2"
+  }
+}

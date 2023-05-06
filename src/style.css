@@ -1,0 +1,62 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  overflow: hidden;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+#app {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 0;
+}
+
+#app canvas {
+  outline: none;
+}
+
+#debug {
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  width: 350px;
+  z-index: 10;
+}
+
+.container-huge {
+  max-width: 80rem;
+  padding: 2rem;
+  margin: auto;
+}
+
+.home_header {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  row-gap: 1rem;
+}
+
+.home_subheading {
+  font-size: 1.5rem;
+  font-family: sans-serif;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-family: sans-serif;
+  font-size: 3rem;
+  text-transform: uppercase;
+  color: white;
+}
