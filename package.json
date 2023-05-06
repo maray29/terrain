@@ -1,15 +1,15 @@
 {
-  "name": "@maray-ai/threejs-template",
+  "name": "@maray-ai/terrain",
   "private": false,
-  "version": "0.0.0",
-  "description": "Three.js starter template.",
-  "homepage": "https://github.com/maray29/threejs-template#readme",
+  "version": "1.5.2",
+  "description": "Generating particles using mesh with three.js.",
+  "homepage": "https://github.com/maray29/terrain#readme",
   "license": "MIT",
   "keywords": [],
   "author": "maray29 <ayk@maray.ai>",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/maray29/threejs-template.git"
+    "url": "git+https://github.com/maray29/terrain.git"
   },
   "type": "module",
   "main": "dist/index.js",
