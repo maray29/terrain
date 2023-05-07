@@ -5,7 +5,7 @@ export class Debug {
   constructor(app) {
     this.app = app;
 
-    // this.#createGridHelper();
+    this.#createGridHelper();
     this.#createPanel();
     this.#createSceneConfig();
     this.#createPhysicsConfig();

@@ -1,8 +1,13 @@
-import { GLTFLoader as ThreeGLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
+import { GLTFLoader as ThreeGLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import { DRACOLoader } from "three/addons/loaders/DRACOLoader.js";
 
 export class GLTFLoader {
   constructor(manager) {
-    this.loader = new ThreeGLTFLoader(manager)
+    this.loader = new ThreeGLTFLoader(manager);
+
+    const dracoLoader = new DRACOLoader();
+    dracoLoader.setDecoderPath("https://www.gstatic.com/draco/v1/decoders/");
+    this.loader.setDRACOLoader(dracoLoader);
   }
 
   /**
@@ -13,10 +18,10 @@ export class GLTFLoader {
    */
   async load(resources) {
     if (Array.isArray(resources)) {
-      const promises = resources.map(url => this.#loadModel(url))
-      return await Promise.all(promises)
+      const promises = resources.map((url) => this.#loadModel(url));
+      return await Promise.all(promises);
     } else {
-      return await this.#loadModel(resources)
+      return await this.#loadModel(resources);
     }
   }
 
@@ -27,10 +32,10 @@ export class GLTFLoader {
    * @returns Promise
    */
   #loadModel(url) {
-    return new Promise(resolve => {
-      this.loader.load(url, model => {
-        resolve(model)
-      })
-    })
+    return new Promise((resolve) => {
+      this.loader.load(url, (model) => {
+        resolve(model);
+      });
+    });
   }
 }

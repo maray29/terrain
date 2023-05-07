@@ -110,7 +110,7 @@ class App {
     // this.shadedBox.rotation.y = elapsed;
     // this.shadedBox.rotation.z = elapsed * 0.6;
 
-    this.plane.rotation.z = elapsed * 0.025;
+    this.points.rotation.z = elapsed * 0.025;
     this.particles.rotation.z = elapsed * 0.025;
     // this.curves.rotation.z = elapsed * 0.05;
 
@@ -259,23 +259,21 @@ class App {
 
     // this.#processObject(r3dm2);
 
-    const r3dm = await rhinoLoader.load("/terrain-02.3dm");
+    // const r3dm = await rhinoLoader.load("/terrain-02.3dm");
 
-    this.mesh = r3dm.children[0];
-    // this.mesh.rotation.z = -Math.PI / 2;
-    // this.mesh.updateMatrixWorld();
+    // const gltf = await gltfLoader.load("./terrain.glb");
+    // const gltf = await gltfLoader.load("./terrain.glb.txt");
+    const gltf = await gltfLoader.load(
+      "https://uploads-ssl.webflow.com/644fb99554f3dd49b26a902b/64581d4755f9041a3d641604_terrain.glb.txt"
+    );
 
-    // this.mesh.material = SampleShaderMaterial.clone();
-    // this.mesh.material.wireframe = true;
+    this.mesh = gltf.scene.children[0];
+    this.mesh.rotation.x = THREE.MathUtils.degToRad(90);
 
     this.geometry = this.mesh.geometry;
-    // this.geometry.center();
-    // this.material = SampleShaderMaterial.clone();
     this.material = ParticleShaderMaterial.clone();
-    // this.material.wireframe = true;
-    console.log("Material", this.material.uniforms);
 
-    this.plane = new THREE.Points(this.geometry, this.material);
+    this.points = new THREE.Points(this.geometry, this.material);
 
     this.number = this.geometry.attributes.position.array.length;
     let randoms = new Float32Array(this.number / 3);
@@ -307,9 +305,7 @@ class App {
       new THREE.BufferAttribute(colorRandoms, 1)
     );
 
-    console.log(this.plane);
-    console.log(this.geometry.attributes.position.array.length);
-    this.scene.add(this.plane);
+    this.scene.add(this.points);
 
     this.#animateTerrain();
   }
@@ -349,7 +345,6 @@ class App {
 
     this.particles = new THREE.Points(particleGeometry, particleMaterial);
     this.scene.add(this.particles);
-    console.log("hello");
   }
 
   #processObject(object) {
