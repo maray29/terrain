@@ -1,7 +1,7 @@
 {
   "name": "@maray-ai/terrain",
   "private": false,
-  "version": "1.5.2",
+  "version": "1.6.0",
   "description": "Generating particles using mesh with three.js.",
   "homepage": "https://github.com/maray29/terrain#readme",
   "license": "MIT",

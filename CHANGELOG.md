@@ -4,6 +4,12 @@
 
 ### Minor Changes
 
+- da5f394: Implement glb model.
+
+## 1.6.0
+
+### Minor Changes
+
 - bdd502d: Initial commit.
 
 ## 1.5.2
