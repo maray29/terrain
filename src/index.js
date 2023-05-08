@@ -403,12 +403,26 @@ class App {
 
   #addListeners() {
     window.addEventListener("resize", this.#resizeCallback, { passive: true });
+
+    // window.addEventListener("scroll", this.#onScroll);
   }
 
   #removeListeners() {
     window.removeEventListener("resize", this.#resizeCallback, {
       passive: true,
     });
+  }
+
+  #onScroll() {
+    const maxScrollHeight = window.body.scrollHeight / window.innerHeight;
+    const scrollPercentage = window.scrollY / maxScrollHeight;
+    const startPosition = new THREE.Vector3(7.5, 4.5, 30);
+    const endPosition = new THREE.Vector3(0, 10, 5);
+    this.camera.position.lerpVectors(
+      startPosition,
+      endPosition,
+      scrollPercentage
+    );
   }
 
   #onResize() {
